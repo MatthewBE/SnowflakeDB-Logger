@@ -6,8 +6,6 @@ name: Python CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 permissions: 
   contents: write
 
@@ -30,4 +28,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Run tests with pytest
-      run: pytest tests/
+      run: python -m pytest tests/
