@@ -50,7 +50,3 @@ def main(session: snowpark.Session):
   return "logged"
   
 ```
-
-
-# SnowflakeLogger
-# SnowflakeLogger
