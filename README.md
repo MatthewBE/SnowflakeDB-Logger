@@ -10,7 +10,25 @@ Often organizations will have stringent role isolation levels within a Snowflake
 
 ## Implementation
 
-This requires an [Snowflake integration](https://docs.snowflake.com/en/user-guide/ecosystem-etl) and [Snowflake Stage](https://docs.snowflake.com/en/user-guide/data-load-considerations-stage) in the Cloud provider of choice. 
+This requires an [Snowflake integration](https://docs.snowflake.com/en/user-guide/ecosystem-etl) and [Snowflake Stage](https://docs.snowflake.com/en/user-guide/data-load-considerations-stage) in the Cloud provider of choice. Additionally requires a role that had the ability to create tables in a Snoflake DataBase
+
+### Setting up the Logging Table
+
+```SQL
+
+CREATE TABLE SF_DBNAME.SF.PYTHON_LOGS (
+
+   LOG_TIMESTAMP TIMESTAMP_NTZ
+  ,LOG_LEVEL VARCHAR
+  ,LOG_LEVEL_DETAIL VARCHAR
+  ,LOG_PROCESS VARCHAR
+  ,ERROR_TRACE VARCHAR
+
+);
+
+```
+
+Once the table is created, import the logger into the Procedure/Function in Snowflake
 
 Logging in Python Stored Procedure in Snowflake 
 
