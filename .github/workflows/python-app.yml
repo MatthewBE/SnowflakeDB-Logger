@@ -6,6 +6,8 @@ name: Python CI
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 permissions: 
   contents: write
 
@@ -14,7 +16,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.REPO_SECRET }}
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -28,4 +34,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Run tests with pytest
-      run: python3 -m pytest tests/
+      run: pytest tests/
+
