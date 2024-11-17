@@ -17,13 +17,16 @@ jobs:
 
     steps:
 
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-        token: ${{ secrets.REPO_SECRET }}
+    - name: Configure Git
+      run: |
+        git config --global user.name "GitHub Actions Bot"
+        git config --global user.email "actions@github.com"
+        git config --global url."https://${{ secrets.PAT }}@github.com/".insteadOf "https://github.com/"
 
+
+    - uses: actions/checkout@v4
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: '3.x'
 
