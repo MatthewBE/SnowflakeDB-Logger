@@ -1,7 +1,6 @@
 
 ![example workflow](https://github.com/MatthewBE/SnowflakeDB-Logger/actions/workflows/python-app.yml/badge.svg)
 
-https://github.com/MatthewBE/SnowflakeDB-Logger/blob/main/.github/workflows/python-app.yml
 
 # Simple Snowflake Python Logger
 
