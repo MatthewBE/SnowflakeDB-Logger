@@ -1,5 +1,5 @@
 import random, string, pytest
-import sflogger as sf
+import src.sflogger as sf
 
 sl = sf.StreamLogger("Test Logging")
 logger = sl.create_logger()

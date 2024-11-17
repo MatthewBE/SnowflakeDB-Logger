@@ -1,4 +1,4 @@
-from sflogger import LoggerSchema
+from src.sflogger import LoggerSchema
 
 test_dataclass = LoggerSchema()
 
