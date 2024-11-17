@@ -36,7 +36,7 @@ def test_data_columns_vals():
     assert data["cols"] == ["LOG_TIMESTAMP", "LOG_LEVEL", "LOG_LEVEL_DETAIL", "LOG_PROCESS" , "ERROR_TRACE"]
 
 def test_data_logs():
-    assert len(data["logs"]) > 0
+    assert len(data["logs"]) > 4
 
 def test_data_logs_type():
     assert isinstance(data["logs"], list)
